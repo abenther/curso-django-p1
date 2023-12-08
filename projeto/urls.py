@@ -1,12 +1,10 @@
 from django.contrib import admin
-from django.urls import path
-from django.http import HttpResponse
+from django.urls import include, path
 
-def sobre(request):
-    return HttpResponse("String")
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sobre/', sobre)
+    path('', include('recipes.urls')),
 ]
+ 
